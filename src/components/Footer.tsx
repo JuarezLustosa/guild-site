@@ -1,37 +1,31 @@
-import Icon from "./Icon";
 import { guild } from "@/data/guild";
+import { Crest } from "./Crest";
 
-export default function Footer() {
+export function Footer() {
   return (
-    <footer>
-      <div className="wrap footer-grid">
-        <div>
-          <div className="footer-name">{guild.name.toUpperCase()}</div>
-          <div className="footer-sub">Guilda de Raid &amp; Mythic+</div>
-          <div className="footer-tagline">&quot;Juntos, superamos limites.&quot;</div>
+    <footer className="footer" id="sobre">
+      <div className="footer-inner">
+        <div className="footer-brand">
+          <h2>{guild.name}</h2>
+          <p>{guild.subtitle}</p>
+          <small>Juntos, superamos limites.</small>
         </div>
-        <Icon id="i-emblem" className="footer-crest" />
-        <div className="footer-links" id="discord">
-          <h4>Siga-nos</h4>
-          <a href={guild.links.discord}>
-            <Icon id="i-chat" />
-            Discord
+        <Crest />
+        <div className="socials">
+          <span>Siga-nos</span>
+          <a href={guild.links.discord} target="_blank" rel="noreferrer">
+            <b className="social-icon discord-social">●●</b> Discord
           </a>
-          <a href={guild.links.warcraftLogs}>
-            <Icon id="i-chart" />
-            Warcraft Logs
+          <a href={guild.links.warcraftLogs} target="_blank" rel="noreferrer">
+            <b className="social-icon">◉</b> Warcraft Logs
           </a>
-          <a href={guild.links.raiderIO}>
-            <Icon id="i-star" />
-            Raider.IO
+          <a href={guild.links.raiderIO} target="_blank" rel="noreferrer">
+            <b className="social-icon rio-social">R</b> Raider.IO
           </a>
         </div>
       </div>
-      <div className="wrap">
-        <div className="footer-bottom">
-          © {guild.name}. Todos os direitos reservados. Mockup conceitual — não afiliado à Blizzard
-          Entertainment.
-        </div>
+      <div className="copyright">
+        © {new Date().getFullYear()} {guild.name}. Todos os direitos reservados.
       </div>
     </footer>
   );

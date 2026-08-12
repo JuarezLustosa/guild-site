@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1b1c38"/><stop offset="1" stop-color="#080b14"/></linearGradient>
+    <radialGradient id="p" cx="50%" cy="48%" r="48%"><stop stop-color="#bc8cff"/><stop offset=".18" stop-color="#783bc8"/><stop offset=".55" stop-color="#321b62" stop-opacity=".55"/><stop offset="1" stop-color="#0a0b16" stop-opacity="0"/></radialGradient>
+    <filter id="g"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <rect width="600" height="360" fill="url(#sky)"/>
+  <ellipse cx="320" cy="150" rx="230" ry="155" fill="url(#p)" opacity=".85"/>
+  <path d="M55 360 88 190l32-41 26-108 25 108 33 41 34 170Zm155 0 43-224 36-50 34-82 34 82 39 50 44 224Zm224 0 27-170 31-38 25-94 26 94 31 38 28 170Z" fill="#0a0d17" stroke="#343752" stroke-opacity=".55"/>
+  <ellipse cx="326" cy="264" rx="47" ry="70" fill="#6e36bc" opacity=".7" filter="url(#g)"/>
+  <ellipse cx="326" cy="264" rx="30" ry="55" fill="url(#p)" stroke="#bc8cff"/>
+  <path d="M0 312Q145 268 275 300t325 0v60H0Z" fill="#05070d"/>
+</svg>

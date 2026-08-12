@@ -1,33 +1,28 @@
-import Icon from "./Icon";
 import { recruitment } from "@/data/guild";
+import { Panel } from "./Panel";
 
-export default function Recruitment() {
+function ClassGlyph({ icon }: { icon: string }) {
+  return <span aria-hidden="true" className={`class-glyph glyph-${icon}`} />;
+}
+
+export function Recruitment() {
   return (
-    <div className="card recruit-card" id="recrutamento">
-      <div className="eyebrow" style={{ marginBottom: 2 }}>
-        Vagas abertas{recruitment.isExample ? " · exemplo" : ""}
-      </div>
-      <h2 className="card-title" style={{ marginTop: 6 }}>
-        Recrutamento
-      </h2>
+    <Panel title="Recrutamento" className="recruit-panel">
       <div className="recruit-grid">
-        {recruitment.roles.map((r) => (
-          <div className="role-card" style={{ ["--class-color" as string]: `var(${r.classColorVar})` }} key={r.className}>
-            <div className="role-icon">
-              <Icon id={r.icon} />
+        {recruitment.map((need) => (
+          <article className={`recruit-card tone-${need.tone}`} key={need.className}>
+            <ClassGlyph icon={need.icon} />
+            <div className="recruit-copy">
+              <h3>{need.className}</h3>
+              <p>{need.spec}</p>
             </div>
-            <div className="role-name">{r.className}</div>
-            <div className="role-spec">{r.spec}</div>
-            <span className={`priority ${r.priority}`}>{r.priority === "alta" ? "Alta" : "Média"}</span>
-          </div>
+            <span className="priority">{need.priority}</span>
+          </article>
         ))}
       </div>
-      <div className="card-foot">
-        <a className="see-more" href="#recrutamento">
-          Ver todos os requisitos
-          <Icon id="i-arrow" />
-        </a>
-      </div>
-    </div>
+      <a className="panel-action" href="#recrutamento">
+        Ver todos os requisitos <span>›</span>
+      </a>
+    </Panel>
   );
 }

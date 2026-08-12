@@ -32,12 +32,16 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
 
 # local Claude Code session config
 .claude/settings.local.json
+
+# reference project downloaded locally, not part of this repo
+/ascensao-guild/
 
 # typescript
 *.tsbuildinfo
